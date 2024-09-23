@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+    font-family: 'Baloo 2', Arial, sans-serif;
+}
+
+#root {
+    height: 100%;
+}
+
+.MuiContainer-root {
+    padding: 0 !important;
+}
+
+.MuiBox-root {
+    margin: 0 !important;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
