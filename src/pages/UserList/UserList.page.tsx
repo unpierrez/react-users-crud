@@ -1,7 +1,19 @@
-import { Button, Card, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Box, Snackbar, Alert } from '@mui/material';
-import useUserList from './UserList.hook';
-import { User } from './UserList.types'; 
-import DeleteDialog from '../../components/DeleteDialog/DeleteDialog.component';
+import {
+  Button,
+  Card,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Box,
+  Snackbar,
+  Alert,
+} from '@mui/material'
+import useUserList from './UserList.hook'
+import { User } from './UserList.types'
+import DeleteDialog from '../../components/DeleteDialog/DeleteDialog.component'
 
 const UserList = () => {
   const {
@@ -16,11 +28,15 @@ const UserList = () => {
     handleOpenDialog,
     confirmDelete,
     handleCloseDialog,
-  } = useUserList();
+  } = useUserList()
 
   return (
     <Box sx={{ pt: { xs: 5, sm: 5, xl: 10 }, pb: 2, px: { xs: 2, sm: 5 } }}>
-      <Button onClick={() => navigate('/registrar-usuario')} size="large" variant="contained">
+      <Button
+        onClick={() => navigate('/registrar-usuario')}
+        size="large"
+        variant="contained"
+      >
         Novo usuário
       </Button>
       <Card sx={{ mt: 2, p: 3 }}>
@@ -52,8 +68,13 @@ const UserList = () => {
                     <TableCell>{user?.phone}</TableCell>
                     <TableCell>{user?.address}</TableCell>
                     <TableCell>
-                      <Button onClick={() => handleEditUser(user)}>Editar</Button>
-                      <Button onClick={() => handleOpenDialog(user)} color="error">
+                      <Button onClick={() => handleEditUser(user)}>
+                        Editar
+                      </Button>
+                      <Button
+                        onClick={() => handleOpenDialog(user)}
+                        color="error"
+                      >
                         Deletar
                       </Button>
                     </TableCell>
@@ -65,20 +86,28 @@ const UserList = () => {
         </TableContainer>
       </Card>
 
-      <Snackbar open={openSnackbar} autoHideDuration={6000} onClose={handleSnackbarClose}>
-        <Alert onClose={handleSnackbarClose} severity={users?.isError? 'error' : 'success'} sx={{ width: '100%' }}>
+      <Snackbar
+        open={openSnackbar}
+        autoHideDuration={6000}
+        onClose={handleSnackbarClose}
+      >
+        <Alert
+          onClose={handleSnackbarClose}
+          severity={users?.isError ? 'error' : 'success'}
+          sx={{ width: '100%' }}
+        >
           {snackbarMessage}
         </Alert>
       </Snackbar>
 
-      <DeleteDialog 
-        open={openDialog} 
-        userToDelete={userToDelete} 
-        onClose={handleCloseDialog} 
-        onConfirm={confirmDelete} 
+      <DeleteDialog
+        open={openDialog}
+        userToDelete={userToDelete}
+        onClose={handleCloseDialog}
+        onConfirm={confirmDelete}
       />
     </Box>
-  );
-};
+  )
+}
 
-export default UserList;
+export default UserList

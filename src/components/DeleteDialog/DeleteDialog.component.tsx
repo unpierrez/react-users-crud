@@ -1,9 +1,26 @@
-import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from "@mui/material";
-import { DeleteDialogProps } from "./DeleteDialog.types";
-import useDeleteDialog from "./DeleteDialog.hook";
+import {
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+} from '@mui/material'
+import { DeleteDialogProps } from './DeleteDialog.types'
+import useDeleteDialog from './DeleteDialog.hook'
 
-const DeleteDialog: React.FC<DeleteDialogProps> = ({ open, userToDelete, onClose, onConfirm }) => {
-    const { handleDelete } = useDeleteDialog({userToDelete, onClose, onConfirm, open})
+const DeleteDialog: React.FC<DeleteDialogProps> = ({
+  open,
+  userToDelete,
+  onClose,
+  onConfirm,
+}) => {
+  const { handleDelete } = useDeleteDialog({
+    userToDelete,
+    onClose,
+    onConfirm,
+    open,
+  })
 
   return (
     <Dialog open={open} onClose={onClose}>
@@ -22,7 +39,7 @@ const DeleteDialog: React.FC<DeleteDialogProps> = ({ open, userToDelete, onClose
         </Button>
       </DialogActions>
     </Dialog>
-  );
-};
+  )
+}
 
-export default DeleteDialog;
+export default DeleteDialog

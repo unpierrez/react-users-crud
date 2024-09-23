@@ -1,16 +1,20 @@
-import { DeleteDialogProps } from "./DeleteDialog.types";
+import { DeleteDialogProps } from './DeleteDialog.types'
 
-const useDeleteDialog = ({ userToDelete, onClose, onConfirm }: DeleteDialogProps) => {
-    const handleDelete = () => {
-        if (userToDelete) {
-            onConfirm(userToDelete.id);
-            onClose();
-        }
-    };
+const useDeleteDialog = ({
+  userToDelete,
+  onClose,
+  onConfirm,
+}: DeleteDialogProps) => {
+  const handleDelete = () => {
+    if (userToDelete) {
+      onConfirm(userToDelete.id)
+      onClose()
+    }
+  }
 
-    return {
-        handleDelete
-    };
-};
+  return {
+    handleDelete,
+  }
+}
 
-export default useDeleteDialog;
+export default useDeleteDialog

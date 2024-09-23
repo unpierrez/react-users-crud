@@ -1,10 +1,10 @@
-import { TextField, Button, Card, Box, Snackbar, Alert } from '@mui/material';
-import useRegisterUser from './RegisterUser.hook';
-import { useLocation } from 'react-router-dom';
+import { TextField, Button, Card, Box, Snackbar, Alert } from '@mui/material'
+import useRegisterUser from './RegisterUser.hook'
+import { useLocation } from 'react-router-dom'
 
 const RegisterUser = () => {
-  const location = useLocation();
-  const userToEdit = location.state?.user;
+  const location = useLocation()
+  const userToEdit = location.state?.user
 
   const {
     register,
@@ -14,8 +14,8 @@ const RegisterUser = () => {
     handleSnackbarClose,
     handleOnSubmit,
     navigate,
-    errors 
-  } = useRegisterUser(userToEdit);
+    errors,
+  } = useRegisterUser(userToEdit)
 
   return (
     <Box sx={{ pt: { xs: 5, sm: 5, xl: 10 }, px: { xs: 2, sm: 5 } }}>
@@ -63,18 +63,31 @@ const RegisterUser = () => {
             fullWidth
             margin="normal"
           />
-          <Button type="submit" variant="contained" color="primary" sx={{ mt: 2 }}>
+          <Button
+            type="submit"
+            variant="contained"
+            color="primary"
+            sx={{ mt: 2 }}
+          >
             Salvar
           </Button>
         </form>
       </Card>
-      <Snackbar open={openSnackbar} autoHideDuration={6000} onClose={handleSnackbarClose}>
-        <Alert onClose={handleSnackbarClose} severity="success" sx={{ width: '100%' }}>
+      <Snackbar
+        open={openSnackbar}
+        autoHideDuration={6000}
+        onClose={handleSnackbarClose}
+      >
+        <Alert
+          onClose={handleSnackbarClose}
+          severity="success"
+          sx={{ width: '100%' }}
+        >
           {snackbarMessage}
         </Alert>
       </Snackbar>
     </Box>
-  );
-};
+  )
+}
 
-export default RegisterUser;
+export default RegisterUser
