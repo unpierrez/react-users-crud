@@ -32,13 +32,14 @@ const UserList = () => {
                 <TableCell>CPF</TableCell>
                 <TableCell>Email</TableCell>
                 <TableCell>Endereço</TableCell>
+                <TableCell>Telefone</TableCell>
                 <TableCell>Ações</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {users?.data?.length === 0 ? (
                 <TableRow>
-                  <TableCell colSpan={5} align="center">
+                  <TableCell colSpan={6} align="center">
                     Nenhum usuário encontrado.
                   </TableCell>
                 </TableRow>
@@ -48,6 +49,7 @@ const UserList = () => {
                     <TableCell>{user?.name}</TableCell>
                     <TableCell>{user?.cpf}</TableCell>
                     <TableCell>{user?.email}</TableCell>
+                    <TableCell>{user?.phone}</TableCell>
                     <TableCell>{user?.address}</TableCell>
                     <TableCell>
                       <Button onClick={() => handleEditUser(user)}>Editar</Button>

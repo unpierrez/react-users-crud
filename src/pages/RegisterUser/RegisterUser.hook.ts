@@ -10,7 +10,7 @@ import { UserFormInputs } from './RegisterUser.validation';
 
 const useRegisterUser = (userToEdit?: User) => {
     const { addUser, updateUser } = useQueries();
-    const { register, handleSubmit, reset } = useForm<UserFormInputs>({
+    const { register, handleSubmit, reset, formState: { errors } } = useForm<UserFormInputs>({
         resolver: zodResolver(schema),
     });
     const navigate = useNavigate();
@@ -69,6 +69,7 @@ const useRegisterUser = (userToEdit?: User) => {
         handleSnackbarClose,
         handleOnSubmit,
         navigate,
+        errors,
     };
 };
 
